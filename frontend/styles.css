@@ -127,9 +127,7 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
 }
-
 
 .contenedor {
   width: 90%;
@@ -187,8 +185,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-
 
 @media (max-width: 768px) {
   .contenedor {
