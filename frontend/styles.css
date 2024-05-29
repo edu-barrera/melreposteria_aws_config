@@ -130,6 +130,15 @@ body {
   justify-content: center;
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+
 .contenedor {
   width: 90%;
   max-width: 1200px;
