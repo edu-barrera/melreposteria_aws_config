@@ -106,21 +106,6 @@ header {
 }
 
 /* HEADER */
-/* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
-.footer {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.footer {
-  background-color: white;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 .cards-container {
   display: flex;
@@ -130,6 +115,16 @@ header {
   padding: 20px;
 } 
 
+/* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
+
+.footer {
+  background-color: white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center; <--Se eliminaria porque con la línea de abajo es suficiente para alinear*/
+  justify-content: center;
+}
 
 .contenedor {
   width: 90%;
