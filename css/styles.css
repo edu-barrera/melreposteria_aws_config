@@ -94,7 +94,7 @@ header {
 }
 
 .custom-bg-rosa {
-  background-color: #ffdad8; /* Color rosa claro en hexadecimal */
+  background-color: #FFDAD8; /* Color rosa claro en hexadecimal */
 }
 
 .custom-btn-color1 {
@@ -188,6 +188,12 @@ a:hover {
   text-decoration: underline;
 }
 
+/*Para los botones de navegacion*/
+.nav-link {
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
 
 @media (max-width: 768px) {
