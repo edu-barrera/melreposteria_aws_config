@@ -207,3 +207,12 @@ a:hover {
 }
 
 /* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
+
+/* Carousel */
+
+.container-carousel {
+  max-width: 500px; 
+  margin: 0 auto;
+    
+}
+
