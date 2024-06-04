@@ -184,9 +184,7 @@
   transition: 300ms;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
   background-image: url(/src/fotos-team/galletasVane.jpeg);
-  background-size: cover;
-  background-position: center;
-  background-position-y: center;
+
 }
 
 .imagen_Ana {
@@ -248,10 +246,7 @@
   transform: translate(0px);
   transition: 300ms;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
-  background-image: url(/src/fotos-team/galletaLuis.png);
-  background-size: cover;
-  background-position: center;
-  background-position-y: center;
+  background-image: url(/src/fotos-team/galletaLuis.png); 
 }
 
 
