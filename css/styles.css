@@ -8,20 +8,20 @@
   border-radius: 15px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   color: rgb(0, 0, 0);
-  height: 480px;
+  height: 400px;
   padding: 10px 15px 15px;
-  
+  position: relative;
   text-align: center;
   overflow: hidden;
-  width: 100%;
+  width: 230px;
   transition: all 0.3s ease;
 }
 
 .card:hover {
   transition: all 0.01s;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
-  height: 520px;
-  width: 100%;
+  height: 440px;
+  width: 250px;
   font-size: 15px;
 }
 
@@ -60,8 +60,8 @@
   left: 0;
   width: 100%;
   height: 80%;
-  background-size: cover;
-  background: url(resources/fotos-team/eduardo-galleta2.png);
+  background-size: contain;
+  background: url(resources/fotos-team/eduardo-galleta.png);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -108,36 +108,49 @@ header {
 /* HEADER */
 /* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 .footer {
-  width: 100%;
-  background-color: #f8f9fa; 
-  padding: 20px 0;
-  flex-direction: column;
-  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/*.cards-container {
+.footer {
+  background-color: white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
-}*/
-
+}
 
 .contenedor {
-  max-width: 1200px; /* Ancho máximo del contenido del footer */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding: 0 20px; /* Espaciado horizontal */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .barra {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .logo img {
   max-width: 100px;
+  height: auto;
+  align-self: flex-start;
 }
 
 .navegacion {
@@ -173,8 +186,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
 @media (max-width: 768px) {
   .contenedor {
     flex-direction: column;
@@ -196,3 +207,12 @@ a:hover {
 }
 
 /* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
+
+/* Carousel */
+
+.container-carousel {
+  max-width: 500px; 
+  margin: 0 auto;
+    
+}
+
