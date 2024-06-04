@@ -1,5 +1,7 @@
 const mensaje = document.createElement("div");
 const containerForm = document.querySelector(".container");
+const footer = document.querySelector(".footer");
+const name = document.querySelector(".name");
 //
 (function () {
   // Public key en https://dashboard.emailjs.com/admin/account
@@ -20,11 +22,11 @@ window.onload = function () {
           mensaje.classList.add("mensaje-exito");
           mensaje.innerHTML = `
           <div class="mensaje-exito">
-          <h2>Gracias 🎉</h2>
-          <p>Hemos recibido tu mensaje, recibirás pronto una respuesta de nuestra parte.</p>
+          <h2>Gracias 🎉 ${this.name.value}</h2>
+          <p>Hemos recibido tu mensaje, responderemos pronto 🍪.</p>
           <button class="btn-exito btn-cierre">De acuerdo!</button>
          </div>`; // mensaje que aparece cuando se mande el form por correo
-          containerForm.insertAdjacentElement("afterend", mensaje);
+          footer.insertAdjacentElement("beforebegin", mensaje);
 
           // Boton de cierre
           document
@@ -44,7 +46,7 @@ window.onload = function () {
 const form = document.getElementsByTagName("form");
 const nombre = document.getElementById("name").value.trim();
 const email = document.getElementById("email").value.trim();
-const telefono = document.getElementById("telefono").value.trim();
+const telefono = document.getElementById("numCel").value.trim();
 const message = document.getElementById("mensaje").value.trim();
 const error = document.getElementById("error");
 
@@ -66,9 +68,24 @@ function validarForm() {
     alert("Formulario enviado exitosamente!");
   }
 }
+
 let btnEnviar = document
   .getElementById("btnEnviar")
   .addEventListener("click", function (event) {
     event.preventDefault();
     validarForm();
   });
+
+const numCel = document.getElementById("numCel");
+document.getElementById("numCel").addEventListener("input", function () {
+  const errorMessage = document.getElementById("error-message");
+  const valNum = /^\d{10}$/;
+
+  if (valNum.test(numCel.value)) {
+    errorMessage.style.display = "none";
+    numCel.style.borderColor = "initial";
+  } else {
+    errorMessage.style.display = "block";
+    numCel.style.borderColor = "red";
+  }
+});
