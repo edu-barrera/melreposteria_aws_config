@@ -89,3 +89,59 @@ document.getElementById("numCel").addEventListener("input", function () {
     numCel.style.borderColor = "red";
   }
 });
+
+//formulario  evento  click
+btnEnviar.addEventListener("click", validarForm); //no se llama a la funcion con parentesis
+//estulo entrada invalida
+function valido(elem) {
+  elem.classList.remove("is-invalid");
+  elem.classList.add("is-valid");
+}
+//Estilo entrada valida
+function invalido(elem) {
+  elem.value = "";
+  elem.classList.add("is-invalid");
+  elem.classList.remove("is-valid");
+}
+//funcion para validar las entradas del formulario
+function validarForm(event) {
+  event.preventDefault();
+  let mensaje = "";
+  if (nombreTest.test(nombre.value.trim()) == false) {
+    mensaje += "Llenar el campo de nombre correctamente \n";
+    invalido(nombre);
+  } else {
+    valido(nombre);
+  }
+  if (Email.test(email.value.trim()) == false) {
+    mensaje +=
+      "Llenar el campo de correo correctamente \nPor ejemplo: correo123@gmail.com \n";
+    invalido(email);
+  } else {
+    valido(email);
+  }
+  if (Numero.test(telefono.value.trim()) == false) {
+    mensaje += "Llenar el campo de telefono correctamente  \n";
+    invalido(telefono);
+  } else {
+    valido(telefono);
+  }
+  if (Mensaje.test(message.value.trim()) == false) {
+    mensaje += "El campo de mensaje esta vacio";
+    invalido(message);
+  } else {
+    valido(message);
+  }
+  if (mensaje.length > 1) {
+    alert(mensaje);
+    isValid = false;
+  } else {
+    //reseteamos y borramos todo
+    isValid = true;
+    nombre.value = "";
+    telefono.value = "";
+    email.value = "";
+    message.value = "";
+    alert("Formulario enviado exitosamente!");
+  }
+}
