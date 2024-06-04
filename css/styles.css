@@ -248,7 +248,7 @@
   transform: translate(0px);
   transition: 300ms;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
-  background-image: url(/src/fotos-team/galletasAna.jpg);
+  background-image: url(/src/fotos-team/galletaLuis.png);
   background-size: cover;
   background-position: center;
   background-position-y: center;
@@ -346,6 +346,15 @@ h3 {
   font-weight: bold;
   color: #ff2e73;
 }
+/* Ajustar el tamaño del botón desplegable */
+.nav-link.dropdown-toggle.badge.custom-btn-color1 {
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  padding: 10px 20px; 
+}
+
+.nav-link.dropdown-toggle.badge.custom-btn-color1 span {
+  font-size: 1rem; /* Ajusta el tamaño del texto del span */
+}
 
 a {
   color: #f5ceae;
@@ -378,6 +387,8 @@ a:hover {
   }
 }
 
+
+
 /* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 
 /* Carousel */
@@ -387,3 +398,4 @@ a:hover {
   margin: 0 auto;
 
 }
+
