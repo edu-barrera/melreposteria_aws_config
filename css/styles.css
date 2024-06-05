@@ -281,7 +281,7 @@ header {
 }
 
 .footer {
-  background-color: white;
+  background-color: coral;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
@@ -312,6 +312,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background-color: white
 }
 
 .logo img {
@@ -352,10 +353,11 @@ h3 {
 }
 
 a {
-  color: #f5ceae;
+  color: #ff9183;
   text-decoration: none;
   display: block;
   margin-bottom: 5px;
+  font-weight: 650;
 }
 
 a:hover {
