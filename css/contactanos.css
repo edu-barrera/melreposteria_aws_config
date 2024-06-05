@@ -28,17 +28,10 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-/* .form-control:focus {
-  border-color: #007bff;
-  outline: none;
+.isInvalid {
+  border: 1px solid red;
 }
 
-.form-control:required {
-  border-color: #dc3545;
+.isValid {
+  background-color: green;
 }
-
-.form-control:required:focus {
-  border-color: #dc3545;
-}
-
-/* Optional: Style placeholder text */
