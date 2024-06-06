@@ -70,7 +70,7 @@ function invalido(elem) {
 }
 //funcion para validar las entradas del formulario
 function validarForm(event) {
-  // event.preventDefault();
+  event.preventDefault();
   let mensaje = "";
   if (nombreTest.test(nombre.value.trim()) == false) {
     mensaje += "Llenar el campo de nombre correctamente \n";

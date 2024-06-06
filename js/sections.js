@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Mel Repostería
   </h4>
   <p style="margin: 0; margin-top: 0; margin-bottom: 0">
-    ¡Las mejores artesanales!
+    ¡Las mejores galletas artesanales!
   </p>
 </div>
 </div>
