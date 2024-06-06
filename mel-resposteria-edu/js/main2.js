@@ -5,7 +5,7 @@ const nombre = document.getElementById("name");
 const email = document.getElementById("email");
 const telefono = document.getElementById("telefono");
 const message = document.getElementById("mensaje");
-let btnEnviar= document.getElementById("btnEnviar");
+let btnEnviar= document.getElementById("btn-Enviar");
 //variables expresiones regulares formulario
 let nombreTest = /^[a-zA-Z\u00C0-\u017F\s]{3,70}$/;
 let Email = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/;
@@ -68,7 +68,7 @@ function invalido(elem){
 }
 //funcion para validar las entradas del formulario 
 function validarForm(event){
-    event.preventDefault();
+  //  event.preventDefault();
     let mensaje="";
     if(nombreTest.test(nombre.value.trim())==false){
         mensaje+="Llenar el campo de nombre correctamente \n";
