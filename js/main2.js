@@ -1,18 +1,4 @@
-const mensaje = document.createElement("div");
-const containerForm = document.querySelector(".container");
-// Entadas del formulario
-const nombre = document.getElementById("name");
-const email = document.getElementById("email");
-const telefono = document.getElementById("telefono");
-const message = document.getElementById("mensaje");
-let btnEnviar= document.getElementById("btn-Enviar");
-//variables expresiones regulares formulario
-let nombreTest = /^[a-zA-Z\u00C0-\u017F\s]{3,70}$/;
-let Email = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/;
-let Numero = /^[0-9]{10}$/;
-let Mensaje = /^[a-zA-Z\u00C0-\u017F\s]{2,}$/;
-let isValid = true;
-
+// Part 1: EmailJS initialization and form submission
 (function () {
   // Public key en https://dashboard.emailjs.com/admin/account
   emailjs.init({
@@ -22,88 +8,119 @@ let isValid = true;
 
 window.onload = function () {
   document
-    .getElementById("contact-form") // Nombre de la form
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
+    .getElementById("contact-form")
+    .addEventListener("submit", validarForm);
+};
 
-      emailjs.sendForm("service_m32z9s6", "contact_form", this).then(
+// Part 2: Form validation
+
+// Form inputs
+const nombre = document.getElementById("name");
+const email = document.getElementById("email");
+const telefono = document.getElementById("telefono");
+const message = document.getElementById("mensaje");
+let btnEnviar = document.getElementById("btnEnviar");
+
+// Regular expressions for validation
+let nombreTest = /^[a-zA-Z\u00C0-\u017F\s]{3,70}$/;
+let emailTest = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/;
+let numeroTest = /^[0-9]{10}$/;
+let mensajeTest = /^[a-zA-Z\u00C0-\u017F\s]{2,}$/;
+
+// Function to style valid input
+function valido(elem) {
+  elem.classList.remove("is-invalid");
+  elem.classList.add("is-valid");
+}
+
+// Function to style invalid input
+function invalido(elem) {
+  elem.value = "";
+  elem.classList.add("is-invalid");
+  elem.classList.remove("is-valid");
+}
+
+// Form validation function
+function validarForm(event) {
+  event.preventDefault();
+
+  let mensaje = "";
+
+  // Validate nombre
+  if (!nombreTest.test(nombre.value.trim())) {
+    mensaje += "Llenar el campo de nombre correctamente \n";
+    invalido(nombre);
+  } else {
+    valido(nombre);
+  }
+
+  // Validate email
+  if (!emailTest.test(email.value.trim())) {
+    mensaje +=
+      "Llenar el campo de correo correctamente \nPor ejemplo: correo123@gmail.com \n";
+    invalido(email);
+  } else {
+    valido(email);
+  }
+
+  // Validate telefono
+  if (!numeroTest.test(telefono.value.trim())) {
+    mensaje += "Llenar el campo de telefono correctamente \n";
+    invalido(telefono);
+  } else {
+    valido(telefono);
+  }
+
+  // Validate message
+  if (!mensajeTest.test(message.value.trim())) {
+    mensaje += "El campo de mensaje está vacío \n";
+    invalido(message);
+  } else {
+    valido(message);
+  }
+
+  // Check if there are validation messages
+  if (mensaje.length > 0) {
+    alert(mensaje);
+  } else {
+    // If validation is successful, send the email
+    emailjs
+      .sendForm(
+        "service_m32z9s6",
+        "contact_form",
+        document.getElementById("contact-form")
+      )
+      .then(
         () => {
           console.log("SUCCESS!");
-          mensaje.classList.add("mensaje-exito");
-          mensaje.innerHTML = `
-          <div class="mensaje-exito">
-          <h2>Gracias 🎉</h2>
-          <p>Hemos recibido tu mensaje, recibirás pronto una respuesta de nuestra parte.</p>
-          <button class="btn-exito btn-cierre">De acuerdo!</button>
-         </div>`; // mensaje que aparece cuando se mande el form por correo
-          containerForm.insertAdjacentElement("afterend", mensaje);
+          const confirmacion = document.createElement("div");
+          confirmacion.classList.add("mensaje-exito");
+          confirmacion.innerHTML = `
+        <div class="mensaje-exito">
+          <h2>Gracias 🎉 ${nombre.value}</h2>
+          <p>Hemos recibido tu mensaje, responderemos pronto 🍪</p>
+          <button class="btn-exito btn-cierre">Ok</button>
+        </div>`; // mensaje que aparece cuando se mande el form por correo
+
+          const containerForm = document.querySelector("#container");
+          containerForm.insertAdjacentElement("afterend", confirmacion);
 
           // Boton de cierre
           document
             .querySelector(".btn-cierre")
             .addEventListener("click", function () {
-              mensaje.remove();
+              confirmacion.remove();
             });
+
+          // Reset form fields
+          nombre.value = "";
+          email.value = "";
+          telefono.value = "";
+          message.value = "";
         },
         (error) => {
           console.log("FAILED...", error);
         }
       );
-    });
-};
-
-
-//formulario  evento  click
-btnEnviar.addEventListener("click",validarForm);  //no se llama a la funcion con parentesis
-//estulo entrada invalida 
-function valido(elem){
-    elem.classList.remove("is-invalid");
-    elem.classList.add("is-valid");
-}
-//Estilo entrada valida
-function invalido(elem){
-    elem.value="";
-    elem.classList.add("is-invalid");
-    elem.classList.remove("is-valid");
-}
-//funcion para validar las entradas del formulario 
-function validarForm(event){
-  //  event.preventDefault();
-    let mensaje="";
-    if(nombreTest.test(nombre.value.trim())==false){
-        mensaje+="Llenar el campo de nombre correctamente \n";
-        invalido(nombre);
-    }else{
-       valido(nombre);
-    }
-    if(Email.test(email.value.trim())==false){
-        mensaje+="Llenar el campo de correo correctamente \nPor ejemplo: correo123@gmail.com \n";
-        invalido(email);
-    }else{
-        valido(email);
-    }
-    if(Numero.test(telefono.value.trim())==false){
-        mensaje+="Llenar el campo de telefono correctamente  \n";
-        invalido(telefono);
-    }else{
-        valido(telefono);
-    }
-    if(Mensaje.test(message.value.trim())==false){
-        mensaje+="El campo de mensaje esta vacio";
-        invalido(message);
-    }else{
-        valido(message);
-    }
-    if (mensaje.length>1){
-        alert(mensaje);
-        isValid=false;
-    }else{
-        //reseteamos y borramos todo
-        isValid=true;
-        nombre.value="";
-        telefono.value="";
-        email.value="";
-        message.value="";
-        alert("Formulario enviado exitosamente!");
-    }
+  }
 }
