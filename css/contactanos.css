@@ -1,54 +1,38 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.mensaje-exito {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  color: #fefefd;
+  font-size: 1.5rem;
+  font-weight: 400;
+  background-color: #d9a796;
+  top: 40vh;
 }
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
+.btn-exito {
+  border-radius: 10px;
+  width: 50px;
+  padding: 3px;
+  background-color: #eed8ff;
+}
 
-.container{
-    width: 60%;
-    padding: 45px;
-    border-radius: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+.btn-exito:hover {
+  background-color: #dbd8ff;
 }
-.row{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-   
-}
-.col-md-7{
-    padding: 20px;
-}
-.col-md-5{
-    background: #1089ff;
-    padding: 20px;
-    color: white;
 
-}
 .form-control {
-    height: 52px;
-    background: #fff;
-    color: #000;
-    font-size: 14px;
-    border-radius: 2px;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
 }
 
-.bi{
-    font-size: 20px;
-}
-.d-flex p{
-    font-size: 18px;
-    padding-left: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.isInvalid {
+  border: 1px solid red;
 }
 
-
-@media only screen and (max-width:600px){
-    .container{
-        width: 100%;
+.isValid {
+  background-color: green;
+}
