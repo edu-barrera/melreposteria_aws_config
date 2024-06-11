@@ -32,12 +32,11 @@
   </head>
 
   <style>
-    .imagenFondo {
-      background-image: url("https://usagif.com/wp-content/uploads/gif/confetti-18.gif"); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
-      background-size: cover; /* Esto ajustará la imagen para cubrir todo el contenedor */
-      background-position: center;
-      width: 100%;
-    }
+    #list-items,  #etiquetas-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Define el ancho de las columnas */
+    gap: 20px; /* Define el espacio entre las tarjetas */
+}
   </style>
 
   <body>
@@ -45,7 +44,23 @@
       id="navbar-example2"
       class="navbar custom-bg-rosa px-3 mb-3 custom-bg-red"
     ></header>
-
+    <!--Cursos-->
+    <!-- Aquí se agrega el contenedor para los cursos -->
+    <h5 id="titulo-pagina" style="font-size: 36px; font-weight:
+      bold; font-family: 'Montserrat', sans-serif; 
+      color: #D84A40; text-align: center;">Cursos</h5>
+    <div class="container mt-5">
+      <div class="row row-cols-2" id="list-items"></div> 
+      <link rel="stylesheet" href="css/productos.css" />
+        <script src="js/products.js" defer></script>
+ </div>
+  <!--etiquetas-->
+ <h5 id="titulo-pagina" style="font-size: 36px; 
+ font-weight: bold; font-family: 'Montserrat',
+  sans-serif; color: #D84A40; text-align: center;">Cookie cards y Etiquetas</h5>
+ <div class="container mt-5">
+   <div class="row row-cols-2" id="etiquetas-items"></div> 
+ </div>
     <!--Footer-->
     <footer id="footer"></footer>
     <script src="./js/main2.js"></script>
