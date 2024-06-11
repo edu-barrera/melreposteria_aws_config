@@ -101,3 +101,114 @@
 //     //reseteamos y borramos todo
 //   }
 // }
+
+function addItem(item) {
+    const itemHTML = '<div class="card" style="width: 16rem;">\n' +
+        '    <img src="' + item.img + '" class="card-img-top" alt="image">\n' +
+        '    <div class="card-body">\n' +
+        '        <h5 class="card-title">' + item.name + '</h5>\n' +
+        '        <p class="card-text">' + item.description + '</p>\n' +
+        '        <a href="#" class="btn btn-primary">Add</a>\n' +
+        '    </div>\n' +
+        '</div>\n' +
+        '<br/>';
+    const itemsContainer = document.getElementById("list-items");
+    itemsContainer.innerHTML += itemHTML;
+}
+
+addItem({
+    'name': 'juice',
+    'img': 'https://www.gs1india.org/media/Juice_pack.jpg',
+    'description': 'Orange and Apple juice fresh and delicious'
+});
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://www.irishtimes.com/polopoly_fs/1.4078148!/image/image.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://i.pinimg.com/originals/c1/f8/a6/c1f8a671e1131e8bde4f3c8ec90949a6.jpg',
+    'description': 'Cheese & Onion Chips'
+});
+

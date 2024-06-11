@@ -1,3 +1,6 @@
+if(document.title=="acerca"){
+
+
 // Part 1: EmailJS initialization and form submission
 (function () {
   // Public key en https://dashboard.emailjs.com/admin/account
@@ -124,3 +127,6 @@ function validarForm(event) {
       );
   }
 }
+
+}
+
