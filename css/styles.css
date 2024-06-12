@@ -1,8 +1,10 @@
 /* CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS */
 .card {
-  background: linear-gradient(-45deg,
-      rgba(182, 41, 41, 0.242) 100px,
-      transparent 0);
+  background: linear-gradient(
+    -45deg,
+    rgba(182, 41, 41, 0.242) 100px,
+    transparent 0
+  );
   border-radius: 15px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   color: rgb(0, 0, 0);
@@ -18,7 +20,6 @@
 }
 
 .card:hover {
-  
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
   height: 440px;
   width: 250px;
@@ -128,8 +129,7 @@
   background-image: url(/src/fotos-team/galletasPao.jpg);
 }
 
-
-.imagen_Daniel{
+.imagen_Daniel {
   border: 5px solid rgba(255, 255, 255, 0.1);
   border-radius: 100%;
   height: 50%;
@@ -149,8 +149,7 @@
   background-image: url(/src/fotos-team/galletadaniel.jpg);
 }
 
-
-.imagen_Melanie{
+.imagen_Melanie {
   border: 5px solid rgba(255, 255, 255, 0.1);
   border-radius: 100%;
   height: 50%;
@@ -163,14 +162,14 @@
   filter: drop-shadow(5px -4px 10px rgba(0, 0, 0, 0.604));
 }
 
-.card .imagen_Melanie:hover{
+.card .imagen_Melanie:hover {
   transform: translate(0px);
   transition: 300ms;
-   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
   background-image: url(/src/fotos-team/galletaMel.jpg);
- }
+}
 
- .imagen_Vane {
+.imagen_Vane {
   border: 5px solid rgba(255, 255, 255, 0.1);
   border-radius: 100%;
   height: 50%;
@@ -188,7 +187,6 @@
   transition: 300ms;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
   background-image: url(/src/fotos-team/galletasVane.jpeg);
-
 }
 
 .imagen_Ana {
@@ -211,7 +209,6 @@
   background-image: url(/src/fotos-team/galletasAna.jpg);
 }
 
-
 .imagen_Jezer {
   border: 5px solid rgba(255, 255, 255, 0.1);
   border-radius: 100%;
@@ -230,7 +227,6 @@
   transition: 300ms;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
   background-image: url(/src/fotos-team/galletaJezer.jpg);
-  
 }
 
 .imagen_Luis {
@@ -250,9 +246,8 @@
   transform: translate(0px);
   transition: 300ms;
   box-shadow: 5px 5px 15px rgba(229, 0, 0, 0.5);
-  background-image: url(/src/fotos-team/galletaLuis.png); 
+  background-image: url(/src/fotos-team/galletaLuis.png);
 }
-
 
 /* CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS */
 
@@ -266,16 +261,6 @@ header {
   /* Color rosa claro en hexadecimal */
 }
 
-.custom-btn-color1 {
-  background-color: #ff1493;
-  /* Color rosa intenso en hexadecimal */
-}
-
-.custom-btn-color1 span {
-  width: 50px;
-  height: auto;
-}
-
 /* HEADER */
 /* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 .cards-container {
@@ -286,7 +271,7 @@ header {
   gap: 20px;
   margin-left: 10px;
 }
-.col{
+.col {
   justify-content: center;
 }
 
@@ -296,13 +281,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: white
-}
-
-.logo img {
-  max-width: 100px;
-  height: auto;
-  align-self: flex-start;
+  background-color: white;
 }
 
 .navegacion {
@@ -314,42 +293,14 @@ header {
   width: 100%;
 }
 
-.seccion {
-  flex: 1;
-  margin: 10px;
-  text-align: center;
-}
-
 h3 {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #ff2e73;
 }
-/* Ajustar el tamaño del botón desplegable */
-.nav-link.dropdown-toggle.badge.custom-btn-color1 {
-  font-size: 1rem; /* Ajusta el tamaño del texto */
-  padding: 10px 20px; 
-}
-
-.nav-link.dropdown-toggle.badge.custom-btn-color1 span {
-  font-size: 1rem; /* Ajusta el tamaño del texto del span */
-}
-
-a {
-  color: #ff9183;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 650;
-}
-
-a:hover {
-  text-decoration: underline;
-}
 
 @media (max-width: 768px) {
- 
   .barra {
     flex-direction: column;
     text-align: center;
@@ -365,8 +316,6 @@ a:hover {
   }
 }
 
-
-
 /* FOOTER  FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER */
 
 /* Carousel */
@@ -374,6 +323,8 @@ a:hover {
 .container-carousel {
   max-width: 500px;
   margin: 0 auto;
+}
+
 
 }
 <<<<<<< HEAD
