@@ -435,3 +435,22 @@ background-color: #DD7979;
 background-color: #DD7979;
 
 }
+
+/**LO SIGUIENTE ES PARA ANCLAR EL FOOTER HSTA LA PARTE DE ABAJO DE LA PAGINA */
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Divide la página en tres filas: auto, 1fr (fraccionada) y auto */
+  min-height: 100vh; /* Establece el alto mínimo del cuerpo para ocupar al menos toda la altura de la ventana */
+}
+/* Estilo para las card de productos  */
+
+#list-items{
+  display: flex;
+  flex-flow: wrap;
+  justify-content:center;
+  
+}
+
+
