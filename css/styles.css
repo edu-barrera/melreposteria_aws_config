@@ -326,19 +326,15 @@ h3 {
 }
 
 
-}
-<<<<<<< HEAD
-
-
 body {
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-rows: auto 1fr auto; /* Divide la página en tres filas: auto, 1fr (fraccionada) y auto */
   min-height: 100vh; /* Establece el alto mínimo del cuerpo para ocupar al menos toda la altura de la ventana */
-=======
  /* Cursos  */
- 
+}
+
 
 /* Estilo para el título principal */
 h5.card-title {
@@ -394,6 +390,4 @@ background-color: #DD7979;
 
 .btn:hover {
 background-color: #DD7979;
-
->>>>>>> origin/mel
 }
