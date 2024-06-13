@@ -72,6 +72,9 @@ const etiquetas = [
 window.onload = function () {
     products.forEach(addItem);
     etiquetas.forEach(addEtiquetaItem);
+
+
+    
 };
 
 
