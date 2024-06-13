@@ -348,7 +348,7 @@ a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
  
   .barra {
     flex-direction: column;
@@ -407,7 +407,7 @@ h5.card-title {
 }
 
 .card-icon {
-  width: 25px;
+  width: 30%;
   padding-right: 10px;
   
 }
