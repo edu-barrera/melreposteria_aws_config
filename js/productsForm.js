@@ -110,14 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
         products.forEach(p => {
             console.log(p.id, p.title, p. description, p.price, p.image);
             productsList.insertAdjacentHTML("beforeend",
-                ` <div class="card mb-4 mt-3" style="width: 18rem;" data-id="${p.id}"> 
-            <img src="${p.image}" class="card-img-top" alt="image">
-            <div class="card-body">
-                <h5 class="card-title" ">${p.title}</h5>
-                <p class="card-text">${p.description}</p>
-                <p class="card-text" style="font: bold; color: black;"> $ ${p.price} </p>  
-                <a href="#" class="btn" btn-primary btn-delete">Borra producto</a> 
-            `
+                `<div class="card" style="width: 18rem;" data-id="${p.id}"> 
+                <img src=${p.image} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${p.title}</h5>
+                  <p class="card-text">${p.description}</p>
+                  <p class="card-text">${p.price}</p>                  
+                  <a href="#" class="btn btn-primary btn-delete">Borra producto</a>
+                </div>
+              </div>`
             ); //beforeend
         });//forEach
         

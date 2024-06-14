@@ -17,7 +17,7 @@ function addItem(item) {
     recortar(item);
     const itemHTML = `
         <div class="card mb-4">
-            <a href="${item.curso}"><img src="${item.img}" class="card-img-top" alt="image"></a>
+            <a href="${item.curso}"><img src="${item.img}" class="card-img-top" alt="image"></<>
             <div class="card-body">
                 <h5 class="card-title" ">${item.name}</h5>
                 <p class="card-text">${item.description}</p>
