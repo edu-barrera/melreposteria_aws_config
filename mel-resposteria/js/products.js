@@ -49,6 +49,8 @@ function addEtiquetaItem(item) {
 
 }
 
+
+
 // Lista de productos
 const products = [
     { name: 'Curso estilo Acuarela', img: 'src/productos/acuarela3.jpg', description: 'Aprende esta técnica que puedes implementar en...', curso:'curso1.html' },
@@ -72,9 +74,6 @@ const etiquetas = [
 window.onload = function () {
     products.forEach(addItem);
     etiquetas.forEach(addEtiquetaItem);
-
-
-    
 };
 
 
