@@ -55,7 +55,7 @@ const itemHTML = `
         </div>
     </div>
     `;
-const itemsContainer = document.getElementById("list-items");
+const itemsContainer = document.getElementById("etiquetas-items");
 itemsContainer.innerHTML += itemHTML;
 }
 
