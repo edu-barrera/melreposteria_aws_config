@@ -2,7 +2,7 @@
 (function () {
   // Public key en https://dashboard.emailjs.com/admin/account
   emailjs.init({
-    publicKey: "nj_TNtUcAUozOvRJe",
+    publicKey: "03ig6izIYBUPnZ1qs",
   });
 })(); // Inicializando servicio de emailjs
 
@@ -20,35 +20,60 @@ const email = document.getElementById("email");
 const telefono = document.getElementById("telefono");
 const message = document.getElementById("mensaje");
 let btnEnviar = document.getElementById("btnEnviar");
+const containerForm = document.querySelector("#container");
 
-// Regular expressions for validation
-let nombreTest = /^[a-zA-Z\u00C0-\u017F\s]{3,70}$/;
-let emailTest = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/;
-let numeroTest = /^[0-9]{10}$/;
-let mensajeTest = /^[a-zA-Z\u00C0-\u017F\s]{2,}$/;
+//Función para mensaje de error en caso de form incompleto
+const errorMensaje = function (elem) {
+  const parentText = elem.parentNode.textContent;
+  const confirmacion = document.createElement("div");
+  document.createElement("div");
+  confirmacion.classList.add("mensaje-exito");
+  if (confirmacion) {
+    confirmacion.remove();
+  }
+  confirmacion.innerHTML = `
+      <div class="mensaje-incompleto">
+        <h2>Form incompleto <span> <img class="osito-error" src="src/Iconos/sad_teddy.webp" alt=""></span> </h2>
+        <p> ${nombre.value}, por favor completa la sección ${parentText}</p>
+        <button class="btn-exito btn-cierre">Ok</button>
+      </div>`; // Mensaje al tratar de mandar form incompleto
 
-// Function to style valid input
+  containerForm.insertAdjacentElement("afterend", confirmacion);
+
+  document.querySelector(".btn-cierre").addEventListener("click", function () {
+    confirmacion.remove();
+  });
+};
+
+// Expresiones regulares para validación
+let nombreTest = /^[a-zA-Z\u00C0-\u017F\s]{3,70}$/; // Validar nombres con letras (incluyendo caracteres acentuados) y espacios, entre 3 y 70 caracteres
+let emailTest = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/; // Validar correos electrónicos con el formato estándar
+let numeroTest = /^[0-9]{10}$/; // Validar números telefónicos de 10 dígitos
+let mensajeTest = /^[a-zA-Z\u00C0-\u017F\s]{2,}$/; // Validar mensajes con letras y espacios, con un mínimo de 2 caracteres
+
+// Función para estilizar un input válido
 function valido(elem) {
-  elem.classList.remove("is-invalid");
-  elem.classList.add("is-valid");
+  elem.classList.remove("is-invalid"); // Remover la clase de estilo inválido
+  elem.classList.add("is-valid"); // Agregar la clase de estilo válido
 }
 
-// Function to style invalid input
+// Función para estilizar un input inválido
 function invalido(elem) {
-  elem.value = "";
-  elem.classList.add("is-invalid");
-  elem.classList.remove("is-valid");
+  elem.classList.add("is-invalid"); // Agregar la clase de estilo inválido
+  elem.classList.remove("is-valid"); // Remover la clase de estilo válido
+  errorMensaje(elem); // Llamar a la función que maneja el mensaje de error
 }
 
 // Form validation function
 function validarForm(event) {
   event.preventDefault();
 
-  let mensaje = "";
-
+  const elementosAEliminar = document.querySelectorAll(".mensaje-exito");
+  elementosAEliminar.forEach(function (element) {
+    element.remove();
+  });
   // Validate nombre
   if (!nombreTest.test(nombre.value.trim())) {
-    mensaje += "Llenar el campo de nombre correctamente \n";
     invalido(nombre);
   } else {
     valido(nombre);
@@ -56,8 +81,6 @@ function validarForm(event) {
 
   // Validate email
   if (!emailTest.test(email.value.trim())) {
-    mensaje +=
-      "Llenar el campo de correo correctamente \nPor ejemplo: correo123@gmail.com \n";
     invalido(email);
   } else {
     valido(email);
@@ -81,46 +104,43 @@ function validarForm(event) {
 
   // Check if there are validation messages
   if (mensaje.length > 0) {
-    alert(mensaje);
+    console.log("error");
   } else {
     // If validation is successful, send the email
-    emailjs
-      .sendForm(
-        "service_m32z9s6",
-        "contact_form",
-        document.getElementById("contact-form")
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          const confirmacion = document.createElement("div");
-          confirmacion.classList.add("mensaje-exito");
-          confirmacion.innerHTML = `
+    // emailjs
+    //   .sendForm(
+    //     "template_n1197vv",
+    //     "contact_form",
+    //     document.getElementById("contact-form")
+    //   )
+    //   .then(
+    console.log("exito");
+
+    console.log("SUCCESS!");
+    const confirmacion = document.createElement("div");
+    confirmacion.classList.add("mensaje-exito");
+    confirmacion.innerHTML = `
         <div class="mensaje-exito">
           <h2>Gracias 🎉 ${nombre.value}</h2>
           <p>Hemos recibido tu mensaje, responderemos pronto 🍪</p>
           <button class="btn-exito btn-cierre">Ok</button>
         </div>`; // mensaje que aparece cuando se mande el form por correo
 
-          const containerForm = document.querySelector("#container");
-          containerForm.insertAdjacentElement("afterend", confirmacion);
+    const containerForm = document.querySelector("#container");
+    containerForm.insertAdjacentElement("afterend", confirmacion);
 
-          // Boton de cierre
-          document
-            .querySelector(".btn-cierre")
-            .addEventListener("click", function () {
-              confirmacion.remove();
-            });
+    // Boton de cierre
+    document
+      .querySelector(".btn-cierre")
+      .addEventListener("click", function () {
+        confirmacion.remove();
+      });
 
-          // Reset form fields
-          nombre.value = "";
-          email.value = "";
-          telefono.value = "";
-          message.value = "";
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
+    // Reset form fields
+    // },
+    //   (error) => {
+    //     console.log("FAILED...", error);
+    //   };
+    // );
   }
 }
