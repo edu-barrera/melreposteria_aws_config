@@ -9,12 +9,15 @@ function loadProductsFromLocalStorage() {
 function addProductItem(product) {
     const itemHTML = `
         <div class="card mb-4" data-id="${product.id}">
-            <img src="${product.image}" class="card-img-top" alt="image">
+        <div>
+        <img src="${product.image}" class="card-img-top" alt="image">
+        </div>
             <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
                 <p class="card-text">${product.description}</p>
-                <p style="font: bold; color: black;">$${product.price}</p>  
-                <a href="#" class="btn btn-primary btn-delete">Borrar producto</a>  
+                <p style="font-weight: bold; color: black;">$${product.price}</p>
+                 <div clas="card-info" style="text-align:center;"> 
+                <a href="#" class="btn btn-delete">Añadir al carrito</a>  
             </div>
         </div>
     `;
