@@ -57,7 +57,6 @@ function addEtiquetaItem(item) {
             <p class="card-text">${item.description}</p>
             <p style="font-weight: bold; color: black;"> $ ${item.precio} </p>  
             <div clas="card-info" style="text-align:center;">
-            <a href="${item.link}">+ más info</a> <br>
             <a href="${item.carrito}" class="btn" id="btnEnviar">Añadir al carrito</a> 
             </br> 
         </div>
