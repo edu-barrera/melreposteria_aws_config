@@ -34,7 +34,9 @@ const errorMensaje = function (elem) {
   confirmacion.innerHTML = `
       <div class="mensaje-incompleto">
         <h2>Form incompleto <span> <img class="osito-error" src="src/Iconos/sad_teddy.webp" alt=""></span> </h2>
-        <p> ${nombre.value}, por favor completa la sección ${parentText}</p>
+        <p> ${
+          nombre.value ? nombre.value + "," : ""
+        } por favor completa la sección ${parentText}</p>
         <button class="btn-exito btn-cierre">Ok</button>
       </div>`; // Mensaje al tratar de mandar form incompleto
 
@@ -68,68 +70,69 @@ function invalido(elem) {
 function validarForm(event) {
   event.preventDefault();
 
-  const elementosAEliminar = document.querySelectorAll(".mensaje-exito");
-  elementosAEliminar.forEach(function (element) {
+  // Remove previous success messages if any
+  const existingSuccess = document.querySelectorAll(".mensaje-exito");
+  existingSuccess.forEach(function (element) {
     element.remove();
   });
+
+  let formValid = true; // Flag to track form validity
+
   // Validate nombre
   if (!nombreTest.test(nombre.value.trim())) {
-    invalido(nombre);
+    invalido(nombre, "nombre");
+    formValid = false;
   } else {
     valido(nombre);
   }
 
   // Validate email
   if (!emailTest.test(email.value.trim())) {
-    invalido(email);
+    invalido(email, "email");
+    formValid = false;
   } else {
     valido(email);
   }
 
   // Validate telefono
   if (!numeroTest.test(telefono.value.trim())) {
-    mensaje += "Llenar el campo de telefono correctamente \n";
-    invalido(telefono);
+    invalido(telefono, "telefono");
+    formValid = false;
   } else {
     valido(telefono);
   }
 
   // Validate message
   if (!mensajeTest.test(message.value.trim())) {
-    mensaje += "El campo de mensaje está vacío \n";
-    invalido(message);
+    invalido(message, "mensaje");
+    formValid = false;
   } else {
     valido(message);
   }
 
-  // Check if there are validation messages
-  if (mensaje.length > 0) {
-    console.log("error");
-  } else {
-    // If validation is successful, send the email
+  // If all fields are valid, send the email
+  if (formValid) {
     // emailjs
     //   .sendForm(
+    //     "service_id",
     //     "template_n1197vv",
-    //     "contact_form",
     //     document.getElementById("contact-form")
     //   )
     //   .then(
-    console.log("exito");
 
     console.log("SUCCESS!");
+
     const confirmacion = document.createElement("div");
     confirmacion.classList.add("mensaje-exito");
     confirmacion.innerHTML = `
-        <div class="mensaje-exito">
-          <h2>Gracias 🎉 ${nombre.value}</h2>
-          <p>Hemos recibido tu mensaje, responderemos pronto 🍪</p>
-          <button class="btn-exito btn-cierre">Ok</button>
-        </div>`; // mensaje que aparece cuando se mande el form por correo
+            <div class="mensaje-exito">
+              <h2>Gracias 🎉 ${nombre.value}</h2>
+              <p>Hemos recibido tu mensaje, responderemos pronto 🍪</p>
+              <button class="btn-exito btn-cierre">Ok</button>
+            </div>`;
 
-    const containerForm = document.querySelector("#container");
     containerForm.insertAdjacentElement("afterend", confirmacion);
 
-    // Boton de cierre
     document
       .querySelector(".btn-cierre")
       .addEventListener("click", function () {
@@ -137,6 +140,11 @@ function validarForm(event) {
       });
 
     // Reset form fields
+    nombre.value = "";
+    email.value = "";
+    telefono.value = "";
+    message.value = "";
+
     // },
     //   (error) => {
     //     console.log("FAILED...", error);
