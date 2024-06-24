@@ -1,6 +1,8 @@
 /*Header*/
 header {
   font-family: "Comic Neue";
+  margin: 0;
+  padding: 0;
 }
 
 footer {
@@ -97,9 +99,8 @@ h3 {
   border-radius: 50%;
   margin-right: 20px;
 }
-.navbar-header {
-  margin-top: 100px;
-}
+
+
 .container-fluid {
   background-color: #ffdad8;
 }
@@ -148,6 +149,13 @@ body {
   .navegacion {
     flex-direction: column;
     align-items: center;
+  }
+
+  /*Centra los iconos en modo responsivo*/
+  .navbar-icons {
+    justify-content: center;
+    width: 100%;
+    display: flex; /* Asegura que los iconos se muestren */
   }
 
   .footer-seccion {
