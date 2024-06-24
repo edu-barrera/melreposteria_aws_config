@@ -50,12 +50,12 @@ registroForm.addEventListener("submit", (e) => {
     }
 
     if (!telefonoRegex.test(telefono)) {
-        mostrarAlerta("telefonoAlert", "Teléfono no válido. Debe contener 10 dígitos.");
+        mostrarAlerta("telefonoAlert", "Teléfono no válido. Debe contener 10 dígitos. \nEjemplo: 5522446688");
         errores = true;
     }
 
     if (!contraseñaRegex.test(contraseñaRegistro)) {
-        mostrarAlerta("passwordRegistroAlert", "Contraseña no válida. Debe contener mínimo 8 caracteres, al menos una letra y un número.");
+        mostrarAlerta("passwordRegistroAlert", "Contraseña no válida. Debe contener mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial `#?!@$%^&*-`\nEjemplo: Contr4$eña");
         errores = true;
     }
 
