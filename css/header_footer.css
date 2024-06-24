@@ -83,6 +83,7 @@ h3 {
 
   .footer-seccion {
     margin: 10px 0;
+   position: relative;
   }
 } */
 
@@ -140,3 +141,15 @@ body {
   width: 24px;
   height: 24px;
 }
+.barra{
+  background-color: #ffdad8;
+}
+
+footer {
+  background-color: #fef1f0;
+  }
+
+  .list-unstyled{
+    padding-left:  10px; ;
+  }
+
