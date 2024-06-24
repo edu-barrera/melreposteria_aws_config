@@ -39,6 +39,11 @@ registroForm.addEventListener("submit", (e) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const telefonoRegex = /^[1-9]\d{9}$/;
   const contraseñaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  // expresiones regulares y validaciones
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const telefonoRegex = /^(?!00)\d{2}(?!.*(\d)\1{6})\d{8}$/; //solo numeros como entrada , no se permite numeros repetidos consecutivamente 6 veces ni que empiezen con 00
+  const contraseñaRegex =
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/; //contraeña con IhateRegEx para contraeñas con 1 Mayuscula,1 minuscula, 1 numero, 1 caracter especial de los siguientes  " #?!@$ %^&*- "
 
   let errores = false;
 
@@ -54,11 +59,25 @@ registroForm.addEventListener("submit", (e) => {
     );
     errores = true;
   }
+  if (!telefonoRegex.test(telefono)) {
+    mostrarAlerta(
+      "telefonoAlert",
+      "Teléfono no válido. Debe contener 10 dígitos. \nEjemplo: 5522446688"
+    );
+    errores = true;
+  }
 
   if (!contraseñaRegex.test(contraseñaRegistro)) {
     mostrarAlerta(
       "passwordRegistroAlert",
       "Contraseña no válida. Debe contener mínimo 8 caracteres, al menos una letra y un número."
+    );
+    errores = true;
+  }
+  if (!contraseñaRegex.test(contraseñaRegistro)) {
+    mostrarAlerta(
+      "passwordRegistroAlert",
+      "Contraseña no válida. Debe contener mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial `#?!@$%^&*-`\nEjemplo: Contr4$eña"
     );
     errores = true;
   }

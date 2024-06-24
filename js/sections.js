@@ -107,10 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
      `;
     logIcons.appendChild(divNuevo);
-  } else {
-    console.log("No hay sesión iniciada");
   }
-
   function deleteData() {
     localStorage.removeItem("usuarios");
   }
