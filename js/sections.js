@@ -71,47 +71,26 @@ document.addEventListener("DOMContentLoaded", function () {
   /* INSERCION DE LA SECCION FOOTER  MEDIANTE  COIGO JS Y LA FUNCION insertAdjacentHTML */
   footer.insertAdjacentHTML(
       "beforeend",
-      `
-    <div class="barra">
-      <a class="logo" href="#">
-        <img src="./src/Iconos/oso.png" alt="logo mel reposteria" />
+      `   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
+    <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+    <a class="footer-brand" href="#">
+       <img src="./src/Iconos/oso.png" class="logo">
+      
+    </a>
+    <span class="mb-3 mb-md-0 text-muted">Elaborado por @cookiecoding</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-center list-unstyled">
+    <li class="ms-3">
+      <a class="text-muted" href="https://www.instagram.com/melreposteriamx/">
+        <i class="bi bi-instagram"></i>
       </a>
+    </li>
+    <li class="ms-3">
+      <a class="text-muted" href="https://www.facebook.com/profile.php?id=100067550652660">
+        <i class="bi bi-facebook"></i>
 
-      <nav class="navegacion">
-        <div class="seccion conocenos">
-          <h3>Conócenos</h3>
-          <a href="./acerca.html">Acerca de nosotros</a>
-        </div>
-
-        <div class="seccion redes-sociales">
-          <h3>Redes sociales</h3>
-          <a href="https://www.instagram.com/melreposteriamx/">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=100067550652660">Facebook</a>
-        </div>
-
-        <div class="seccion cursos">
-          <h3>Cursos</h3>
-          <a href="#">Decoración de flores</a>
-        </div>
-
-        <div class="seccion contacto">
-          <h3>Contacto</h3>
-          <a href="./contactanos.html"> Contáctanos</a>
-          <a href="./contactanos.html">Cotizaciones</a>
-        </div>
-
-        <div class="seccion mi-cuenta">
-          <h3>Mi cuenta</h3>
-          <a href="#">Iniciar sesión</a>
-          <a href="#">Registrarse</a>
-        </div>
-
-        <div class="seccion ubicacion">
-          <h3>Ubicación</h3>
-          <a href="#">Pachuca</a>
-        </div>
-      </nav>
-    </div>
     `
   );
 });
