@@ -1,7 +1,16 @@
 /*Header*/
- header {
+header {
   font-family: "Comic Neue";
 }
+
+footer {
+  background-color: #fef1f0;
+}
+
+.list-unstyled {
+  padding-left: 10px;
+}
+
 .custom-bg-rosa {
   background-color: #ffdad8;
   /* Color rosa claro en hexadecimal */
@@ -69,24 +78,16 @@ h3 {
   text-decoration: underline;
 }
 
+.bienvenidoSeccion {
+  display: flex;
+  flex-direction: row;
+}
 
-@media (max-width: 768px) {
-  .barra {
-    flex-direction: column;
-    text-align: center;
-  }
+.bienvenidosP {
+  margin-top: 25px;
+}
 
-  .navegacion {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-seccion {
-    margin: 10px 0;
-  }
-} */
-
-.navbar {
+*/ .navbar {
   display: flex;
   margin: 0;
   padding: 0;
@@ -95,11 +96,9 @@ h3 {
 .navbar-brand {
   border-radius: 50%;
   margin-right: 20px;
-  
 }
-.navbar-header{
+.navbar-header {
   margin-top: 100px;
-
 }
 .container-fluid {
   background-color: #ffdad8;
@@ -128,15 +127,31 @@ body {
   display: flex;
   align-items: center;
   margin-left: auto;
-
 }
 
 .navbar-icons .nav-item {
   padding-left: 10px;
-
 }
 
 .navbar-icons .nav-link img {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 768px) {
+  .barra {
+    flex-direction: column;
+    text-align: center;
+    background-color: #ffdad8;
+  }
+
+  .navegacion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-seccion {
+    margin: 10px 0;
+    position: relative;
+  }
 }
