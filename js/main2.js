@@ -33,10 +33,10 @@ const errorMensaje = function (elem) {
   }
   confirmacion.innerHTML = `
       <div class="mensaje-incompleto">
-        <h2>Form incompleto <span> <img class="osito-error" src="src/Iconos/sad_teddy.webp" alt=""></span> </h2>
+        <h2>Formulario incompleto <span> <img class="osito-error" src="src/Iconos/sad_teddy.webp" alt=""></span> </h2>
         <p> ${
           nombre.value ? nombre.value + "," : ""
-        } por favor completa la sección ${parentText}</p>
+        } Por favor completa la sección ${parentText}</p>
         <button class="btn-exito btn-cierre">Ok</button>
       </div>`; // Mensaje al tratar de mandar form incompleto
 
@@ -128,10 +128,9 @@ function validarForm(event) {
     confirmacion.innerHTML = `
             <div class="mensaje-exito">
               <h2>Gracias 🎉 ${nombre.value}</h2>
-              <p>Hemos recibido tu mensaje, responderemos pronto 🍪</p>
+              <p>Hemos recibido tu mensaje y te responderemos pronto. 🍪 </p>
               <button class="btn-exito btn-cierre">Ok</button>
             </div>`;
-
     containerForm.insertAdjacentElement("afterend", confirmacion);
 
     document
