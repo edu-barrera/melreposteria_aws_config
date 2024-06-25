@@ -89,7 +89,8 @@ h3 {
   margin-top: 25px;
 }
 
-*/ .navbar {
+/*Navbar ocupe todo el espacio disponible*/
+.navbar {
   display: flex;
   margin: 0;
   padding: 0;
