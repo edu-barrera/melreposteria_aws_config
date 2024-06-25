@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                   Acerca de Nosotros
                               </a>
                               <ul class="dropdown-menu">   
-                                  <li><a class="dropdown-item" href="productsForm.html">Mel reposteria</a></li>
+                                  <li><a class="dropdown-item" href="productsForm.html">Mel repostería</a></li>
                                   <li><a class="dropdown-item" href="acerca.html">Cookie Coding</a></li>
                               </ul>
                                     
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `
     );
   } catch (ex) {
-    console.log("ocurrio un error al insertar el html " + ex);
+    console.log("Ocurrió un error al insertar el html " + ex);
   }
 
   /* INSERCION DE LA SECCION FOOTER  MEDIANTE  COIGO JS Y LA FUNCION insertAdjacentHTML */
