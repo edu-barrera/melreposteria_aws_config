@@ -51,7 +51,7 @@ const errorMensaje = function (elem) {
 // Expresiones regulares para validación
 let nombreTest = /^[a-zA-Z\u00C0-\u017F\s]{3,70}$/; // Validar nombres con letras (incluyendo caracteres acentuados) y espacios, entre 3 y 70 caracteres
 let emailTest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validar correos electrónicos con el formato estándar
-let numeroTest = /^(?!00)\d{2}(?!.*(\d)\1{6})\d{8}$/; // no pueden empezar con 00, tampoco pueden tener numeros repetidos 8 veces despues de los 2 primeros y el numero debe de tener 10 digitos
+let numeroTest = /^(?!0)\d{1}(?!.*(\d)\1{4})\d{9}$/; // no pueden empezar con 00, tampoco pueden tener numeros repetidos 4 veces despues de los 2 primeros y el numero debe de tener 10 digitos
 let mensajeTest = /^[a-zA-Z\u00C0-\u017F\s]{2,}$/; // Validar mensajes con letras y espacios, con un mínimo de 2 caracteres
 
 // Función para estilizar un input válido
