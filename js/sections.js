@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //////Cerrar sesión//////////
 
   cerrarSesionBtn.addEventListener("click", () => {
-    divNuevo.innerHTML = `Nos vemos pronto ${nombreUsuario}!`;
+    divNuevo.innerHTML = `Nos vemos pronto ${nombreUsuario}! 🍪 `;
     deleteData();
     setTimeout(() => {
       // redireccionar a la página principal
