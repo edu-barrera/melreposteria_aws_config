@@ -36,9 +36,10 @@ registroForm.addEventListener("submit", (e) => {
   const confirmContraseña = document.querySelector("#passwordConfirm").value;
 
   // expresiones regulares y validaciones
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const telefonoRegex = /^[1-9]\d{9}$/;
-  const contraseñaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  //const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //const telefonoRegex = /^[1-9]\d{9}$/;
+  //const contraseñaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  
   // expresiones regulares y validaciones
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const telefonoRegex = /^(?!00)\d{2}(?!.*(\d)\1{6})\d{8}$/; //solo numeros como entrada , no se permite numeros repetidos consecutivamente 6 veces ni que empiezen con 00
@@ -52,13 +53,7 @@ registroForm.addEventListener("submit", (e) => {
         errores = true;
     }
 
-  if (!telefonoRegex.test(telefono)) {
-    mostrarAlerta(
-      "telefonoAlert",
-      "Teléfono no válido. Debe contener 10 dígitos, no se permiten números repetidos consecutivamente."
-    );
-    errores = true;
-  }
+
   if (!telefonoRegex.test(telefono)) {
     mostrarAlerta(
       "telefonoAlert",
@@ -67,13 +62,6 @@ registroForm.addEventListener("submit", (e) => {
     errores = true;
   }
 
-  if (!contraseñaRegex.test(contraseñaRegistro)) {
-    mostrarAlerta(
-      "passwordRegistroAlert",
-      "La contraseña no es válida. Debe contener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y uno de los siguientes caracteres especiales: #?!@$%^&*-"
-    );
-    errores = true;
-  }
   if (!contraseñaRegex.test(contraseñaRegistro)) {
     mostrarAlerta(
       "passwordRegistroAlert",
