@@ -56,12 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let mensajes = [];
 
         if (!nameValidation.test(productName)) {
-            mensajes.push("El nombre del producto debe tener entre 3 y 30 carácteres.");
+            mensajes.push("El nombre del producto debe tener entre 3 y 30 caracteres.");
             isValid = false;
         }
 
         if (!descriptionValidation.test(productDescription)) {
-            mensajes.push("La descripción del producto debe tener entre 10 y 200 carácteres.");
+            mensajes.push("La descripción del producto debe tener entre 10 y 200 caracteres.");
             isValid = false;
         }
 
