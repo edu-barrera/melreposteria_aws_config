@@ -48,21 +48,21 @@ registroForm.addEventListener("submit", (e) => {
   let errores = false;
 
   if (!emailRegex.test(emailRegistro)) {
-    mostrarAlerta("emailRegistroAlert", "Email no válido");
-    errores = true;
-  }
+        mostrarAlerta("emailRegistroAlert", "Email no válido.");
+        errores = true;
+    }
 
   if (!telefonoRegex.test(telefono)) {
     mostrarAlerta(
       "telefonoAlert",
-      "Teléfono no válido. Debe contener 10 dígitos."
+      "Teléfono no válido. Debe contener 10 dígitos, no se permiten números repetidos consecutivamente."
     );
     errores = true;
   }
   if (!telefonoRegex.test(telefono)) {
     mostrarAlerta(
       "telefonoAlert",
-      "Teléfono no válido. Debe contener 10 dígitos. \nEjemplo: 5522446688"
+      "Teléfono no válido. Debe contener 10 dígitos, no se permiten números repetidos consecutivamente.\nEjemplo: 5522446688"
     );
     errores = true;
   }
@@ -70,20 +70,20 @@ registroForm.addEventListener("submit", (e) => {
   if (!contraseñaRegex.test(contraseñaRegistro)) {
     mostrarAlerta(
       "passwordRegistroAlert",
-      "Contraseña no válida. Debe contener mínimo 8 caracteres, al menos una letra y un número."
+      "La contraseña no es válida. Debe contener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y uno de los siguientes caracteres especiales: #?!@$%^&*-"
     );
     errores = true;
   }
   if (!contraseñaRegex.test(contraseñaRegistro)) {
     mostrarAlerta(
       "passwordRegistroAlert",
-      "Contraseña no válida. Debe contener mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial `#?!@$%^&*-`\nEjemplo: Contr4$eña"
+      "La contraseña no es válida. Debe contener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y uno de los siguientes caracteres especiales: `#?!@$%^&*-`\nEjemplo: Contr4$eña"
     );
     errores = true;
   }
 
   if (contraseñaRegistro !== confirmContraseña) {
-    mostrarAlerta("passwordConfirmAlert", "Las contraseñas no coinciden");
+    mostrarAlerta("passwordConfirmAlert", "Las contraseñas no coinciden.");
     errores = true;
   }
 
@@ -97,7 +97,7 @@ registroForm.addEventListener("submit", (e) => {
   );
 
   if (usuarioRegistrado) {
-    mostrarAlerta("emailRegistroAlert", "El correo ya está registrado");
+    mostrarAlerta("emailRegistroAlert", "El correo electrónico ya está registrado.");
     return;
   }
 
@@ -129,7 +129,7 @@ loginForm.addEventListener("submit", (e) => {
   );
 
   if (!validarUsuario) {
-    mostrarAlerta("emailLoginAlert", "Correo y/o contraseña incorrectos");
+    mostrarAlerta("emailLoginAlert", "Correo y/o contraseña incorrectos.");
     return;
   }
 
