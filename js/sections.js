@@ -110,20 +110,21 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
      `;
     logIcons.appendChild(divNuevo);
-  }
-  function deleteData() {
-    sessionStorage.removeItem("usuarios");
-  }
 
-  //////Cerrar sesión//////////
+    function deleteData() {
+      sessionStorage.removeItem("usuarios");
+    }
 
-  cerrarSesionBtn.addEventListener("click", () => {
-    const nombreUsuario = registro.nombre;
-    divNuevo.innerHTML = `Nos vemos pronto ${nombreUsuario}! 🍪 `;
-    deleteData();
-    setTimeout(() => {
-      // redireccionar a la página principal
-      window.location.href = "index.html";
-    }, 3000);
-  });
+    //////Cerrar sesión//////////
+
+    cerrarSesionBtn.addEventListener("click", () => {
+      const nombreUsuario = registro.nombre;
+      divNuevo.innerHTML = `Nos vemos pronto ${nombreUsuario}! 🍪 `;
+      deleteData();
+      setTimeout(() => {
+        // redireccionar a la página principal
+        window.location.href = "index.html";
+      }, 3000);
+    });
+  }
 });
