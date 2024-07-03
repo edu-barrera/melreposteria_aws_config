@@ -82,13 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
             alertaValidaciones.classList.add("d-none");
 
             // Crear el producto
-            let producto = {   
+          let producto = {   
                 id: Date.now(), //brinda un id unico
-                title: productName,
+                name: productName,
                 description: productDescription,
-                price: productPrice, 
-                image: productImage,
-               
+                precio: productPrice, 
+                img: productImage,
             };
             
             datosProducto.push(producto);
@@ -107,23 +106,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     //Se agrega a la función el data-id
 
-    function createCards(products) {
+   function createCards(products) {
         console.log(products.length);
         productsList.innerHTML = "";
         products.forEach(p => {
-            console.log(p.id, p.title, p. description, p.price, p.image);
+            console.log(p.id, p.name, p. description, p.precio, p.img);
             productsList.insertAdjacentHTML("beforeend",
                 `<div class="card" style="width: 18rem;" data-id="${p.id}"> 
-                <img src=${p.image} class="card-img-top" alt="...">
+                <img src=${p.img} class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">${p.title}</h5>
+                  <h5 class="card-title">${p.name}</h5>
                   <p class="card-text">${p.description}</p>
-                  <p class="card-text">${p.price}</p>                  
+                  <p class="card-text">${p.precio}</p>                  
                   <a href="#" class="btn btn-primary btn-delete">Borra producto</a>
                 </div>
-              </div>`
+              </div>
+              <br>`
             ); //beforeend
         });//forEach
+    
     
         // Agregar eventos de clic a los botones de borrar
         const deleteButtons = document.querySelectorAll(".btn-delete");
