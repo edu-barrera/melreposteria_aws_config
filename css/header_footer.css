@@ -120,7 +120,14 @@ h3 {
 }
 
 body {
-  margin-top: 150px;
+  margin-top: 150px;  
+  display: flex;
+  padding: 0;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh; /* Establece el alto mínimo del cuerpo para ocupar al menos toda la altura de la ventana */
+  
 }
 
 .navbar-nav .nav-link {
