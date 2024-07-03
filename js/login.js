@@ -35,11 +35,17 @@ registroForm.addEventListener("submit", (e) => {
   const contraseñaRegistro = document.querySelector("#passwordRegistro").value;
   const confirmContraseña = document.querySelector("#passwordConfirm").value;
 
+  const nombreForm = document.getElementById("name");
+  const telefonoForm = document.getElementById("telefono");
+  const emailRegistroForm = document.getElementById("emailRegistro");
+  const contraseñaRegistroForm = document.getElementById("passwordRegistro");
+  const confirmContraseñaForm = document.getElementById("passwordConfirm");
+
   // expresiones regulares y validaciones
   //const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   //const telefonoRegex = /^[1-9]\d{9}$/;
   //const contraseñaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  
+
   // expresiones regulares y validaciones
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const telefonoRegex = /^(?!0)\d{1}(?!.*(\d)\1{4})(?!.*0{4})\d{9}$/; //solo numeros como entrada , no se permite numeros repetidos consecutivamente 5 veces ni que empiezen con 0, y solo se puede repetir 3 veces seguidas el 0
@@ -49,10 +55,9 @@ registroForm.addEventListener("submit", (e) => {
   let errores = false;
 
   if (!emailRegex.test(emailRegistro)) {
-        mostrarAlerta("emailRegistroAlert", "Email no válido.");
-        errores = true;
-    }
-
+    mostrarAlerta("emailRegistroAlert", "Email no válido.");
+    errores = true;
+  }
 
   if (!telefonoRegex.test(telefono)) {
     mostrarAlerta(
@@ -85,7 +90,10 @@ registroForm.addEventListener("submit", (e) => {
   );
 
   if (usuarioRegistrado) {
-    mostrarAlerta("emailRegistroAlert", "El correo electrónico ya está registrado.");
+    mostrarAlerta(
+      "emailRegistroAlert",
+      "El correo electrónico ya está registrado."
+    );
     return;
   }
 
@@ -95,21 +103,14 @@ registroForm.addEventListener("submit", (e) => {
     email: emailRegistro,
     contraseña: contraseñaRegistro,
   });
+
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-  /*====================Borrar formulario ==================*/
- let nom= document.querySelector("#name");
- let tel = document.querySelector("#telefono");
- let email = document.querySelector("#emailRegistro");
- let contraseña = document.querySelector("#passwordRegistro");
- let confirm = document.querySelector("#passwordConfirm");
- 
- nom.value="";
- tel.value="";
- email.value="";
- contraseña.value="";
- confirm.value="";
-
+  nombreForm.value = "";
+  telefonoForm.value = "";
+  emailRegistroForm.value = "";
+  contraseñaRegistroForm.value = "";
+  confirmContraseñaForm.value = "";
   mostrarAlerta("registroSuccessAlert", "Registro exitoso", "success");
 });
 
@@ -140,6 +141,8 @@ loginForm.addEventListener("submit", (e) => {
     `Bienvenido ${validarUsuario.nombre}`,
     "success"
   );
+
+  sessionStorage.setItem("usuarios", JSON.stringify(validarUsuario));
 
   // redireccionar a la pagina de index despues de algunos segundos
   setTimeout(() => {
