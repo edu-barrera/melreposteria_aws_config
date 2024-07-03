@@ -96,6 +96,20 @@ registroForm.addEventListener("submit", (e) => {
     contraseña: contraseñaRegistro,
   });
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  /*====================Borrar formulario ==================*/
+ let nom= document.querySelector("#name");
+ let tel = document.querySelector("#telefono");
+ let email = document.querySelector("#emailRegistro");
+ let contraseña = document.querySelector("#passwordRegistro");
+ let confirm = document.querySelector("#passwordConfirm");
+ 
+ nom.value="";
+ tel.value="";
+ email.value="";
+ contraseña.value="";
+ confirm.value="";
+
   mostrarAlerta("registroSuccessAlert", "Registro exitoso", "success");
 });
 
