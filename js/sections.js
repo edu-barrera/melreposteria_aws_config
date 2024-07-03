@@ -96,13 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
   `
   );
   // Consiguiendo nombre
-  const llave = "usuarios";
-  const valor = localStorage.getItem(llave);
+  const valor = sessionStorage.getItem("usuarios");
   const registro = JSON.parse(valor);
-  const nombreUsuario = registro[0].nombre;
+
   const logIcons = document.getElementById("login-icons");
   const divNuevo = document.createElement("div");
   if (valor) {
+    const nombreUsuario = registro.nombre;
     divNuevo.innerHTML = `<div class="bienvenidoSeccion"> <p class="bienvenidosP">Bienvenido ${nombreUsuario} 🐻</p> 
         <button type="button" class="btn btn-danger" id="cerrarSesionBtn">
           Cerrar sesión
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     logIcons.appendChild(divNuevo);
   }
   function deleteData() {
-    localStorage.removeItem("usuarios");
+    sessionStorage.removeItem("usuarios");
   }
 
   //////Cerrar sesión//////////
