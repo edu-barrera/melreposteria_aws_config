@@ -42,7 +42,7 @@ registroForm.addEventListener("submit", (e) => {
   
   // expresiones regulares y validaciones
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const telefonoRegex = /^(?!0)\d{1}(?!.*(\d)\1{4})\d{9}$/; //solo numeros como entrada , no se permite numeros repetidos consecutivamente 6 veces ni que empiezen con 00
+  const telefonoRegex = /^(?!0)\d{1}(?!.*(\d)\1{4})(?!.*0{4})\d{9}$/; //solo numeros como entrada , no se permite numeros repetidos consecutivamente 5 veces ni que empiezen con 0, y solo se puede repetir 3 veces seguidas el 0
   const contraseñaRegex =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/; //contraeña con IhateRegEx para contraeñas con 1 Mayuscula,1 minuscula, 1 numero, 1 caracter especial de los siguientes  " #?!@$ %^&*- "
 
