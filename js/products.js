@@ -1,10 +1,17 @@
-// Función para cargar productos desde el localStorage
 function loadProductsFromLocalStorage() {
     let storedProducts = JSON.parse(localStorage.getItem('productos')) || [];
     storedProducts.forEach(product => {
-        addProductItem(product);
-    });
+    /*   Selector de productos vs cursos
+    if(product.type==true){ //true para etiquetas false para cursos
+            addEtiquetaItem(product);
+        }else{
+            addItem(product);
+        }
+    });*/
+    addEtiquetaItem(product); //se agrega en galletas no en cursos
+});
 }
+
 // Función para agregar un producto al HTML
 function addProductItem(product) {
     const itemHTML = `
