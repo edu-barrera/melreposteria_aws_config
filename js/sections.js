@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //////Cerrar sesión//////////
 
   cerrarSesionBtn.addEventListener("click", () => {
+    const nombreUsuario = registro.nombre;
     divNuevo.innerHTML = `Nos vemos pronto ${nombreUsuario}! 🍪 `;
     deleteData();
     setTimeout(() => {
