@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mel-resposteria
 
 ## Página acerca.html
@@ -16,4 +17,6 @@ BootstrapLinks to an external site.
 --Evaluación:
 La página debe ser responsiva (Adaptarse a desktop, tablet y móvil)
 Utiliza al menos 1 animación o efecto usando CSS / JS.
-La consola del navegador no muestra ningún mensaje de error.
+La consola del navegador no muestra ningún mensaje de error
+# melreposteria_aws_config
+Mel Reposteria is a Java Spring boot a
