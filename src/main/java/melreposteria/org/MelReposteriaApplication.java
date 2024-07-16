@@ -21,6 +21,9 @@ public class MelReposteriaApplication {
 		registrationBean.setFilter(new JwtFilter());
 		registrationBean.addUrlPatterns("/api/productos/*");
 		registrationBean.addUrlPatterns("/api/clientes/*");
+		// registrationBean.addUrlPatterns("/api/login/*");
+
+		
 		return registrationBean;		
 	} //jwtFilter
 

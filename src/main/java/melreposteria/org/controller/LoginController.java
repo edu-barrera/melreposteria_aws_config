@@ -1,12 +1,14 @@
 package melreposteria.org.controller;
 
 
+
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.ServletException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ import melreposteria.org.config.JwtFilter;
 import melreposteria.org.dto.Token;
 import melreposteria.org.model.Clientes;
 import melreposteria.org.service.ClientesService;
-
+@CrossOrigin(origins = {"http://18.118.13.214", "http://localhost:8080"})
 @RestController
 @RequestMapping(path = "/api/login/")
 public class LoginController {
@@ -43,16 +45,21 @@ private final ClientesService clientesService;
 
 
 	private String generateToken(String username) {
-		Calendar calendar = Calendar.getInstance(); // Fecha hora actual
-		calendar.add(Calendar.HOUR, 10); // Pruebas
-		//calendar.add(Calendar.MINUTE, 30); // Produccion		
-		return Jwts.builder().setSubject(username).claim("role", "user")
-				.setIssuedAt(new Date())
-				.setExpiration(calendar.getTime())
-				.signWith(SignatureAlgorithm.HS256, JwtFilter.secret)
-				.compact();
-	} // generateToken
+	    Calendar calendar = Calendar.getInstance();
+	    calendar.add(Calendar.HOUR, 10);
 
+	    String token = Jwts.builder()
+	            .setSubject(username)
+	            .claim("role", "user")
+	            .setIssuedAt(new Date())
+	            .setExpiration(calendar.getTime())
+	            .signWith(SignatureAlgorithm.HS256, JwtFilter.secret)
+	            .compact();
+
+	    System.out.println("Generated Token: " + token); // Add this line for logging
+
+	    return token;
+	}
 	
 	
 	

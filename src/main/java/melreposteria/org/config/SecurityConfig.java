@@ -1,41 +1,47 @@
 package melreposteria.org.config;
 
-import javax.security.auth.message.config.AuthConfig;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import static org.springframework.security.config.Customizer.withDefaults;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-@SuppressWarnings("unused")
+import java.util.Arrays;
+
 @Configuration
 @EnableWebSecurity
-
 public class SecurityConfig {
-	@Bean
-	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
-		return http
-				.csrf(csrf -> csrf.disable())
-				.authorizeHttpRequests(auth -> {
-					auth.anyRequest().permitAll();
-				})
-				.httpBasic(withDefaults())
-				.build();
-	}// configure
-	
-	@Bean
-	public PasswordEncoder encoder() {
-		return new BCryptPasswordEncoder();
-	}// encoder
-	
 
-	
-	
-	
+    @Bean
+    public SecurityFilterChain configure(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable())
+            .authorizeRequests(auth -> auth.anyRequest().permitAll())
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .httpBasic();
+        return http.build();
+    }
 
-}// securityconfig
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://18.118.13.214", "http://localhost:8080"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+}
